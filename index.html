@@ -1,69 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Social Profile</title>
+    <title>Nicolas Ribeiro | Social Profile</title>
+    <!-- Fontes Premium do Google (Inter e Fira Code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="profile-container">
-        <!-- Cabeçalho com sua Foto e Nome Principal -->
+    <main class="app-container">
+        
+        <!-- HEADER: Estilo Linha de Código / Dev Identity -->
         <header class="profile-header">
-            <div class="profile-pic-container">
-                <!-- Substitua pelo link ou caminho da sua foto -->
-                <img src="https://via.placeholder.com/150" alt="Nicolas" class="profile-pic">
+            <div class="avatar-wrapper">
+                <!-- Substitua pelo link ou nome da sua foto real -->
+                <img src="https://via.placeholder.com/150" alt="Nicolas" class="avatar">
+                <span class="status-badge"></span>
             </div>
-            <h1>Nicolas Ribeiro</h1>
-            <p class="nickname">You can call me: Nick</p>
+            
+            <div class="header-text">
+                <span class="dev-tag">&lt;student&gt;</span>
+                <h1>Nicolas Ribeiro</h1>
+                <p class="nickname"><i class="fa-regular fa-comments"></i> You can call me: <strong>Nick</strong></p>
+            </div>
         </header>
 
-        <!-- Seção 1: Informações Pessoais Básicas -->
-        <section class="profile-section info-grid">
-            <div class="info-box">
-                <h3>From</h3>
-                <p>Brasília, DF</p>
+        <!-- SEÇÃO 1: Personal Info Cards (Roteiro do CIL) -->
+        <section class="grid-info">
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="card-content">
+                    <h3>From</h3>
+                    <p>Brasília, DF</p>
+                </div>
             </div>
-            <div class="info-box">
-                <h3>Birthday</h3>
-                <p>Age: 18 • Sign: Capricorn</p> 
+
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-cake-candles"></i></div>
+                <div class="card-content">
+                    <h3>Birthday & Sign</h3>
+                    <p>18y • Capricorn</p>
+                </div>
             </div>
-            <div class="info-box">
-                <h3>Status</h3>
-                <p>Single</p>
+
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-heart"></i></div>
+                <div class="card-content">
+                    <h3>Status</h3>
+                    <p>Single</p>
+                </div>
             </div>
-            <div class="info-box">
-                <h3>Profession</h3>
-                <p>Computer Science Student</p>
+
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-terminal"></i></div>
+                <div class="card-content">
+                    <h3>Profession</h3>
+                    <p>Computer Science</p>
+                </div>
             </div>
         </section>
 
-        <hr>
+        <!-- SEÇÃO 2: Core Competencies & Preferences Tags -->
+        <section class="preferences-section">
+            <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> About Me & Preferences</h2>
+            
+            <!-- Tags estilo Bootcamp -->
+            <div class="tech-tags">
+                <span class="tag tag-python"><i class="fa-brands fa-python"></i> Python</span>
+                <span class="tag tag-logic"><i class="fa-solid fa-brain"></i> Logic</span>
+                <span class="tag tag-git"><i class="fa-brands fa-github"></i> Git/GitHub</span>
+                <span class="tag tag-game"><i class="fa-solid fa-gamepad"></i> Gaming</span>
+            </div>
 
-        <!-- Seção 2: Preferências e Hobbies -->
-        <section class="profile-section">
-            <h2>What I Like</h2>
-            <div class="preferences-container">
-                
-                <div class="pref-card">
-                    <span class="icon">💻</span>
-                    <p>I really like programming in <strong>Python</strong> and solving logic challenges. I think they are awesome!</p>
+            <!-- Descrições usando as estruturas exigidas pelo CIL -->
+            <div class="pref-desc-list">
+                <div class="pref-item">
+                    <div class="pref-bullet"></div>
+                    <p>I <strong>really like</strong> programming in Python and solving logic challenges. I think they are absolutely fantastic!</p>
                 </div>
 
-                <div class="pref-card">
-                    <span class="icon">🎮</span>
-                    <p>I enjoy playing games with my friends online. I think it's the best way to relax.</p>
+                <div class="pref-item">
+                    <div class="pref-bullet"></div>
+                    <p>I <strong>love</strong> playing online games with my friends. I think it is the best way to relax and have fun.</p>
                 </div>
 
-                <div class="pref-card">
-                    <span class="icon">📚</span>
-                    <p>I love learning about technology and automation. I find it absolutely fascinating.</p>
+                <div class="pref-item">
+                    <div class="pref-bullet"></div>
+                    <p>I am <strong>interested in</strong> tech, automation, and version control. I think they are very useful for my future career.</p>
                 </div>
-
             </div>
         </section>
-    </div>
+
+        <!-- FOOTER: Terminal Style -->
+        <footer class="terminal-footer">
+            <p class="console-text"><span class="prompt">$</span> npm run present --target="CIL_Guará"</p>
+        </footer>
+
+    </main>
 
 </body>
 </html>
