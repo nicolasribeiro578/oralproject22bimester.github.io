@@ -1,277 +1,259 @@
-/* Paleta de Cores e Configurações Base (Estilo portifolioHUB Premium) */
-:root {
-    --bg-darker: #0d1117;
-    --bg-card: #161b22;
-    --bg-hover: #21262d;
-    --border-color: #30363d;
-    --text-white: #f0f6fc;
-    --text-gray: #8b949e;
-    --accent-blue: #58a6ff;
-    --accent-green: #238636;
-    --font-sans: 'Inter', sans-serif;
-    --font-mono: 'Fira Code', monospace;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Digital | Nicolas Ribeiro</title>
+    <style>
+        /* Estilos Gerais e Animações */
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            transition: 0.3s;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Menu Superior */
+        header {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
-body {
-    background-color: var(--bg-darker);
-    color: var(--text-white);
-    font-family: var(--font-sans);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 30px 20px;
-}
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
 
-/* Container Principal Layout Split (Sidebar + Content) */
-.portfolio-container {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    width: 100%;
-    max-width: 900px;
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    overflow: hidden;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: 0.3s;
+        }
 
-/* SIDEBAR ESTILO PORTFÓLIO */
-.sidebar {
-    background-color: rgba(22, 27, 34, 0.5);
-    border-right: 1px solid var(--border-color);
-    padding: 40px 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
+        nav a:hover {
+            color: #00bcd4;
+            transform: scale(1.1);
+        }
 
-.profile-card {
-    text-align: center;
-}
+        /* Seção de Perfil */
+        .profile-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #eef2f3 0%, #f4f7f6 100%);
+        }
 
-.avatar-container {
-    position: relative;
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 15px;
-}
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #00bcd4;
+            object-fit: cover;
+            margin-bottom: 15px;
+            transition: 0.5s;
+        }
 
-.profile-avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--border-color);
-}
+        .profile-img:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
 
-.online-status {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    width: 15px;
-    height: 15px;
-    background-color: var(--accent-green);
-    border: 3px solid var(--bg-card);
-    border-radius: 50%;
-}
+        .links {
+            margin-top: 15px;
+            font-size: 16px;
+        }
 
-.profile-card h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 5px;
-}
+        .links a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
 
-.nickname {
-    font-size: 0.85rem;
-    color: var(--text-gray);
-}
+        .links a:hover {
+            transform: translateY(-5px);
+            color: #0056b3;
+        }
 
-.nickname strong {
-    color: var(--accent-blue);
-}
+        /* Container e Cartões */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-/* Lista de Informações Pessoais (Roteiro CIL) */
-.personal-info-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+        h2 {
+            text-align: center;
+            margin-top: 60px;
+            color: #1a1a1a;
+        }
 
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: rgba(48, 54, 61, 0.2);
-    border: 1px solid transparent;
-    transition: all 0.2s ease;
-}
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            border-left: 5px solid transparent;
+        }
 
-.info-item:hover {
-    border-color: var(--border-color);
-    background-color: var(--bg-hover);
-}
+        .card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #00bcd4;
+        }
 
-.info-item i {
-    font-size: 1.2rem;
-    color: var(--accent-blue);
-    width: 24px;
-    text-align: center;
-}
+        .card h3 { margin-top: 0; color: #2c3e50; }
+        .card p { margin: 5px 0; color: #666; }
+        
+        .tech-tag {
+            display: inline-block;
+            background: #e1f5fe;
+            color: #01579b;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
 
-.info-item span {
-    font-size: 0.75rem;
-    color: var(--text-gray);
-    text-transform: uppercase;
-    display: block;
-}
+        .btn-cv {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #00bcd4;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-.info-item p {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-top: 2px;
-}
+        .btn-cv:hover {
+            background-color: #008ba3;
+            box-shadow: 0 4px 15px rgba(0,188,212,0.4);
+        }
+    </style>
+</head>
+<body>
 
-/* CONTEÚDO PRINCIPAL (DIREITA) */
-.main-content {
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-}
+    <header>
+        <nav>
+            <a href="#perfil">Perfil</a>
+            <a href="#objetivo">Objetivo</a>
+            <a href="#formacao">Formação</a>
+            <a href="#competencias">Competências</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#recomendacoes">Recomendações</a>
+        </nav>
+    </header>
 
-.project-badge {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--accent-green);
-    background-color: rgba(35, 134, 54, 0.15);
-    padding: 4px 10px;
-    border-radius: 12px;
-    border: 1px solid rgba(35, 134, 54, 0.3);
-}
+    <section id="perfil" class="profile-section">
+        <img src="foto.png" alt="Nicolas Ribeiro" class="profile-img">
+        <h1>Nicolas Silveira Ribeiro</h1>
+        <p style="max-width: 600px; margin: 10px auto; color: #555; line-height: 1.6;">
+            Estudante de Ciência da Computação no UniCEUB, apaixonado por tecnologia e desenvolvimento de software, com foco em transformar desafios lógicos em soluções digitais criativas, eficientes e inovadoras.
+        </p>
+        
+        <div id="contato" class="links">
+            📧 <a href="mailto:nicolas.riber@gmail.com">E-mail</a> | 
+            🔗 <a href="https://www.linkedin.com/in/nicolas-silveira-ribeiro-0125813ab/" target="_blank">LinkedIn</a> | 
+            📺 <a href="https://www.youtube.com/watch?v=ASF3zyGzJO4" target="_blank">YouTube</a> |
+            💻 <a href="https://github.com/nicolasribeiro578" target="_blank">GitHub</a> |
+            🌐 <a href="https://sites.google.com/view/portifolio-nicolashub/" target="_blank">portfolioHUB</a>
+        </div>
 
-.intro-section h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin: 10px 0;
-    letter-spacing: -1px;
-}
+        <a href="#" class="btn-cv">📄 Baixar Currículo PDF</a>
+    </section>
 
-.sub-presentation {
-    color: var(--text-gray);
-    font-size: 1rem;
-    line-height: 1.6;
-}
+    <div class="container">
+        
+        <div id="objetivo">
+            <h2>🎯 Objetivo Profissional</h2>
+            <div class="card">
+                <p style="font-style: italic; color: #444; font-size: 1.1em; line-height: 1.6;">
+                    Busco minha primeira oportunidade como estagiário, visando aplicar meus conhecimentos em Python e Web Design para solucionar problemas reais, enquanto expando minhas competências técnicas através da graduação em Ciência da Computação no UniCEUB. Este projeto tem como objetivo apresentar meus estudos, práticas e aplicações desenvolvidas ao longo da minha formação, reunindo diferentes atividades e experiências em programação.
+                </p>
+            </div>
+        </div>
 
-/* Tags de Hobbies */
-.preferences-section h3 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+        <div id="formacao">
+            <h2>🎓 Formação Acadêmica</h2>
+            <div class="card">
+                <h3>Ciência da Computação</h3>
+                <p><strong>UniCEUB</strong></p>
+                <p>Início: fevereiro de 2026 | Conclusão: Dezembro de 2029</p>
+            </div>
+            <div class="card">
+                <h3>Ensino Médio Completo</h3>
+                <p>Escola Salesiana Brasília</p>
+                <p>Conclusão: Novembro de 2025</p>
+            </div>
+        </div>
 
-.interest-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
+        <div id="competencias">
+            <h2>🛠️ Competências e Idiomas</h2>
+            
+            <div class="card">
+                <h3>Técnicas básicas (Hard Skills)</h3>
+                <span class="íctech-tag">Python Básico</span>
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">Web Design</span>
+                <span class="tech-tag">Git / GitHub</span>
+            </div>
 
-.tag-badge {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    padding: 4px 12px;
-    background-color: var(--bg-hover);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    color: var(--text-white);
-}
+            <div class="card">
+                <h3>Comportamentais (Soft Skills)</h3>
+                <span class="tech-tag">Trabalho em Equipe</span>
+                <span class="tech-tag">Rápido Aprendizado</span>
+                <span class="tech-tag">Comunicação Clara</span>
+                <span class="tech-tag">Proatividade</span>
+            </div>
 
-/* Grid de Cartões de Preferências */
-.cards-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+            <div class="card">
+                <h3>Idiomas</h3>
+                <p><strong>Português:</strong> Nativo</p>
+                <p><strong>Inglês:</strong> Intermediário (Em desenvolvimento)</p>
+            </div>
+        </div>
 
-.pref-card {
-    background-color: rgba(22, 27, 34, 0.4);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 20px;
-    transition: all 0.2s ease;
-}
+        <div id="projetos">
+            <h2>🚀 Projetos em Destaque</h2>
+            <div class="card">
+                <h3>portfolioHUB</h3>
+               
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">Google Sites</span>
+            </div>
+        </div>
 
-.pref-card:hover {
-    transform: translateX(5px);
-    border-color: var(--text-gray);
-    background-color: var(--bg-hover);
-}
+        <div id="recomendacoes">
+            <h2>💬 Recomendações</h2>
+            <div class="card">
+              
+            </div>
+        </div>
 
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-}
+    </div>
 
-.card-icon {
-    font-size: 1.3rem;
-}
+    <footer style="text-align: center; padding: 40px; color: #888; font-size: 14px;">
+        <p>© 2026 Nicolas Silveira Ribeiro - Todos os direitos reservados.</p>
+    </footer>
 
-.card-header h4 {
-    font-size: 1rem;
-    color: var(--accent-blue);
-}
-
-.pref-card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #c9d1d9;
-}
-
-.pref-card strong {
-    color: var(--text-white);
-    background-color: rgba(88, 166, 255, 0.1);
-    padding: 1px 4px;
-    border-radius: 4px;
-}
-
-/* Footer Terminal */
-.content-footer {
-    margin-top: auto;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-}
-
-.code-line {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--text-gray);
-}
-
-.prompt {
-    color: var(--accent-green);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .portfolio-container {
-        grid-template-columns: 1fr;
-    }
-    .sidebar {
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-    }
-}
+</body>
+</html>
