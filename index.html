@@ -1,129 +1,277 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolas Ribeiro | Social Profile</title>
-    <!-- Fontes Premium (Inter e Fira Code) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Ícones FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* Paleta de Cores e Configurações Base (Estilo portifolioHUB Premium) */
+:root {
+    --bg-darker: #0d1117;
+    --bg-card: #161b22;
+    --bg-hover: #21262d;
+    --border-color: #30363d;
+    --text-white: #f0f6fc;
+    --text-gray: #8b949e;
+    --accent-blue: #58a6ff;
+    --accent-green: #238636;
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
 
-    <div class="portfolio-container">
-        
-        <!-- LATERAL: Perfil e Informações Pessoais (Roteiro 1 a 6) -->
-        <aside class="sidebar">
-            <div class="profile-card">
-                <div class="avatar-container">
-                    <!-- Substitua pelo link da sua foto quando quiser -->
-                    <img src="https://via.placeholder.com/150" alt="Nicolas Ribeiro" class="profile-avatar">
-                    <span class="online-status"></span>
-                </div>
-                <h2>Nicolas Ribeiro</h2>
-                <p class="nickname">"You can call me <strong>Nick</strong>"</p>
-            </div>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            <div class="personal-info-list">
-                <div class="info-item">
-                    <i class="fa-solid fa-map-location-dot"></i>
-                    <div>
-                        <span>From</span>
-                        <p>Brasília, DF (Brazil)</p>
-                    </div>
-                </div>
+body {
+    background-color: var(--bg-darker);
+    color: var(--text-white);
+    font-family: var(--font-sans);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 20px;
+}
 
-                <div class="info-item">
-                    <i class="fa-solid fa-cake-candles"></i>
-                    <div>
-                        <span>Birthday & Sign</span>
-                        <p>Capricorn</p>[cite: 1]
-                    </div>
-                </div>
+/* Container Principal Layout Split (Sidebar + Content) */
+.portfolio-container {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
 
-                <div class="info-item">
-                    <i class="fa-solid fa-user-gradient"></i>
-                    <div>
-                        <span>Status</span>
-                        <p>Single</p>[cite: 1]
-                    </div>
-                </div>
+/* SIDEBAR ESTILO PORTFÓLIO */
+.sidebar {
+    background-color: rgba(22, 27, 34, 0.5);
+    border-right: 1px solid var(--border-color);
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
 
-                <div class="info-item">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <div>
-                        <span>Education</span>
-                        <p>Finished High School at Escola Salesiana Brasília</p>
-                    </div>
-                </div>
-            </div>
-        </aside>
+.profile-card {
+    text-align: center;
+}
 
-        <!-- CONTEÚDO PRINCIPAL: Preferências e Hobbies (Roteiro 7) -->
-        <main class="main-content">
-            
-            <section class="intro-section">
-                <span class="project-badge">CIL Guará • Oral Project</span>[cite: 1]
-                <h1>About Me</h1>
-                <p class="sub-presentation">
-                    Hi there! I want to meet new friends and share a bit about my world and my favorite activities.[cite: 1] 
-                    Here is a quick look into what I do and what I like.
-                </p>
-            </section>
+.avatar-container {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 15px;
+}
 
-            <!-- Seção de Interesses (Substituindo o foco profissional por Hobbies) -->
-            <section class="preferences-section">
-                <h3><i class="fa-solid fa-heart"></i> My Preferences & Hobbies</h3>[cite: 1]
-                
-                <div class="interest-tags">
-                    <span class="tag-badge"><i class="fa-brands fa-python"></i> Python</span>
-                    <span class="tag-badge"><i class="fa-solid fa-brain"></i> Logic Logic</span>
-                    <span class="tag-badge"><i class="fa-brands fa-github"></i> GitHub</span>
-                    <span class="tag-badge"><i class="fa-solid fa-gamepad"></i> Gaming</span>
-                </div>
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+}
 
-                <div class="cards-grid">
-                    <!-- Preferência 1: Tecnologia -->
-                    <div class="pref-card">
-                        <div class="card-header">
-                            <span class="card-icon">💻</span>
-                            <h4>Tech & Logic</h4>
-                        </div>
-                        <p>I <strong>really like</strong> programming in Python and exploring logic challenges.[cite: 1] I think they are absolutely <strong>fantastic and interesting</strong>!</p>
-                    </div>
+.online-status {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--accent-green);
+    border: 3px solid var(--bg-card);
+    border-radius: 50%;
+}
 
-                    <!-- Preferência 2: Jogos -->
-                    <div class="pref-card">
-                        <div class="card-header">
-                            <span class="card-icon">🎮</span>
-                            <h4>Gaming</h4>
-                        </div>
-                        <p>I <strong>love</strong> playing online games with my friends. I think it is the <strong>best</strong> way to relax and have fun together.</p>
-                    </div>
+.profile-card h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 5px;
+}
 
-                    <!-- Preferência 3: Projetos -->
-                    <div class="pref-card">
-                        <div class="card-header">
-                            <span class="card-icon">🚀</span>
-                            <h4>Open Source</h4>
-                        </div>
-                        <p>I am highly <strong>interested in</strong> using Git and GitHub to organize my files.[cite: 1] I think version control is very <strong>useful and great</strong>.</p>
-                    </div>
-                </div>
-            </section>
+.nickname {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
 
-            <!-- Footer integrado estilo Console/Terminal -->
-            <footer class="content-footer">
-                <p class="code-line"><span class="prompt">>_</span> status: ready for the presentation.</p>
-            </footer>
+.nickname strong {
+    color: var(--accent-blue);
+}
 
-        </main>
+/* Lista de Informações Pessoais (Roteiro CIL) */
+.personal-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-    </div>
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(48, 54, 61, 0.2);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
 
-</body>
-</html>
+.info-item:hover {
+    border-color: var(--border-color);
+    background-color: var(--bg-hover);
+}
+
+.info-item i {
+    font-size: 1.2rem;
+    color: var(--accent-blue);
+    width: 24px;
+    text-align: center;
+}
+
+.info-item span {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    display: block;
+}
+
+.info-item p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* CONTEÚDO PRINCIPAL (DIREITA) */
+.main-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.project-badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-green);
+    background-color: rgba(35, 134, 54, 0.15);
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(35, 134, 54, 0.3);
+}
+
+.intro-section h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 10px 0;
+    letter-spacing: -1px;
+}
+
+.sub-presentation {
+    color: var(--text-gray);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Tags de Hobbies */
+.preferences-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.interest-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.tag-badge {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    background-color: var(--bg-hover);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-white);
+}
+
+/* Grid de Cartões de Preferências */
+.cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pref-card {
+    background-color: rgba(22, 27, 34, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.2s ease;
+}
+
+.pref-card:hover {
+    transform: translateX(5px);
+    border-color: var(--text-gray);
+    background-color: var(--bg-hover);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.card-icon {
+    font-size: 1.3rem;
+}
+
+.card-header h4 {
+    font-size: 1rem;
+    color: var(--accent-blue);
+}
+
+.pref-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #c9d1d9;
+}
+
+.pref-card strong {
+    color: var(--text-white);
+    background-color: rgba(88, 166, 255, 0.1);
+    padding: 1px 4px;
+    border-radius: 4px;
+}
+
+/* Footer Terminal */
+.content-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.code-line {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-gray);
+}
+
+.prompt {
+    color: var(--accent-green);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
