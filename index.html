@@ -116,10 +116,14 @@
             border-left: 5px solid #00bcd4;
         }
 
+        /* Borda vermelha para o card de desgostos ao passar o mouse */
+        .card.dislike-card:hover {
+            border-left: 5px solid #ff5252;
+        }
+
         .card h3 { margin-top: 0; color: #2c3e50; }
         .card p { margin: 5px 0; color: #666; line-height: 1.6; }
         
-        /* Ajuste simples para a lista de preferências ficar bonita no cartão */
         .card ul { padding-left: 20px; color: #666; line-height: 1.8; }
         .card li { margin-bottom: 8px; }
 
@@ -160,6 +164,7 @@
             <a href="#perfil">Profile</a>
             <a href="#objetivo">About Me</a>
             <a href="#formacao">My Preferences</a>
+            <a href="#desgostos">Dislikes</a>
             <a href="#competencias">Languages</a>
         </nav>
     </header>
@@ -183,17 +188,30 @@
             </div>
         </div>
 
-        <!-- Seção de Preferências Atualizada -->
         <div id="formacao">
-            <h2> What I Like</h2>
+            <h2>❤️ What I Like</h2>
             <div class="card">
                 <h3>Hobbies & Interests</h3>
                 <p>I am a very active and curious person. Here are a few things I love doing in my free time:</p>
                 <ul>
-                    <strong>Studying:</strong> I am always looking to learn new things and improve my skills.</li>
-                    <strong>Gaming:</strong> Playing video games is one of my favorite ways to have fun and relax with my friends.</li>
-                    <strong>Sports:</strong> I enjoy practicing almost any kind of sport to stay active and healthy.</li>
-                    <strong>Movies & Series:</strong> I love to unwind by watching a good movie or binge-watching a great TV series.</li>
+                    <li> <strong>Studying:</strong> I am always looking to learn new things and improve my skills.</li>
+                    <li> <strong>Gaming:</strong> Playing video games is one of my favorite ways to have fun and relax with my friends.</li>
+                    <li> <strong>Sports:</strong> I enjoy practicing almost any kind of sport to stay active and healthy.</li>
+                    <li> <strong>Movies & Series:</strong> I love to unwind by watching a good movie or binge-watching a great TV series.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Nova Seção: What I Dislike -->
+        <div id="desgostos">
+            <h2>❌ What I hate</h2>
+            <div class="card dislike-card">
+                <h3>Things I Avoid</h3>
+                <p>Just like everyone, there are a few things that I really don't appreciate:</p>
+                <ul>
+                    <li> <strong>Dishonesty:</strong> I value truth and transparency above all.</li>
+                    <li> <strong>Wasting Time:</strong> I prefer keeping things productive and moving forward.</li>
+                    <li> <strong>Heavy Traffic:</strong> Nobody likes spending hours stuck on the road!</li>
                 </ul>
             </div>
         </div>
